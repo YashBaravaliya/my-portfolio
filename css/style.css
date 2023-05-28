@@ -55,7 +55,7 @@ nav ul a{
     width: 600px;
     color: aliceblue;
     text-align: justify;
-        text-justify: inter-word;
+    text-justify: inter-word;
 }
 
 p{
@@ -70,6 +70,7 @@ h1{
 
 h3{
     font-family: 'Lato', sans-serif;
+    line-height: 20px;
 }
 
 a{
@@ -123,6 +124,85 @@ a{
 
 /* Skill section  */
 
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.container .progress{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    color: #fff;
+    background: #444 linear-gradient(to right,transparent 50%,var(--clr) 0);
+}
+
+.container .progress h3{
+    background: #222;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.container .progress h3 span{
+    font-size: .65rem;
+    font-weight: 400;
+}
+
+.container .progress h4{
+    background: #222;
+    z-index: 1;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--clr);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.small-text{
+    font-size: .75rem;
+    text-align: center;
+}
+
+.container .progress::before{
+    content: '';
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    transform-origin: left;
+    border-radius: 0 100% 100% 0/50%;
+}
+
+.container .progress::after{
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: #222;
+}
+
+.container .progress::before{
+    background: var(--clr);
+    transform: rotate(calc(((var(--i) - 50) * 0.01turn)));
+}
+
+.container .progress.less::before{
+    background: #444;
+    transform: rotate(calc(((var(--i) 0) * 0.01turn)));
+}
+
 .skill,.mid{
     color: #fff;
     padding:0 10%;
@@ -149,32 +229,7 @@ span{
     /* height: 80vh; */
 }
 
-.skill-rating {
-    margin-bottom: 10px;
-  }
-  
-  .rating {
-    unicode-bidi: bidi-override;
-    /* direction: rtl; */
-    color: #ccc;
-    font-size: 20px;
-    display: inline-block;
-  }
-  
-  .star {
-    display: inline-block;
-    cursor: pointer;
-  }
-  
-  .star::before {
-    content: '\2605';
-  }
-  
-  .star.active,
-  .star:hover {
-    color: #ffbf00;
-  }
-  
+
 
 
 
